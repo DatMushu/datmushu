@@ -10,12 +10,24 @@ const About = () => {
   return (
     <section className='section' id='about' ref={ref}>
       <div className="container mx-auto">
-        <div>
-          <div className='flex-1 bg-about bg-contain bg-no-repeat h-[640px] mix-blend-lighten bg-top'></div>
-          <div>
-            <h2>Sobre mi</h2>
-            <h3>Soy un Front-end Dev freelancer con más de 10 años de experiencia en el rubro </h3>
-            <p>
+        <div className='flex flex-col gap-y-10 lg:flex-row lg:items-center lg:gap-x-20 lg:gap-y-0 h-screen'>
+          <motion.div
+            variants={fadeIn('right', 0.3)}
+            initial='hidden'
+            whileInView={'show'}
+            viewport={{ once: false, amount: 0.3 }}
+            className='flex-1 bg-about bg-contain bg-no-repeat h-[640px] mix-blend-lighten bg-top'
+          ></motion.div>
+          <motion.div 
+            variants={fadeIn('left', 0.5)}
+            initial='hidden'
+            whileInView={'show'}
+            viewport={{ once: false, amount: 0.3 }}
+            className='flex-1'
+          >
+            <h2 className='h2 text-accent'>Sobre mi</h2>
+            <h3 className='h3 mb-4'>Soy un Front-end Dev freelancer con más de 10 años de experiencia </h3>
+            <p className='mb-6'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam accusantium rerum nulla adipisci est ea omnis sed minus! Aliquam excepturi illo eveniet ipsam autem corporis atque a facere aspernatur amet!
             </p>
             <div className='flex gap-x-6 lg:gap-x-10 mb-12'>
@@ -53,9 +65,15 @@ const About = () => {
                   Proyectos <br />
                   Completados
                 </div>
-              </div>
+              </div>              
             </div>
-          </div>
+            <div className='flex gap-x-8 items-center'>
+                <button className='btn btn-lg'>Contáctame</button>
+                <a href="#" className='text-gradient btn-lnk'>
+                  Mi Portafolio
+                </a>
+              </div>
+          </motion.div>
         </div>
       </div>
     </section>
